@@ -27,7 +27,7 @@ Data get_data_from_buffer() {
     return data;
 }
 
-void producer_task() {
+void producer_progress() {
     Data data = produce_data();  // 生产数据
 
     wait(empty);  // 缓冲区是否有空位，即生产者是否有可用资源
@@ -37,7 +37,7 @@ void producer_task() {
     signal(full);  // 消费者的可用资源数+1
 }
 
-void consumer_task() {
+void consumer_progress() {
     wait(full);  // 缓冲区是否有数据，即消费者是否有可用资源
     wait(mutex);  // 当前缓冲区是否可用
     Data data = get_data_from_buffer();// 从缓冲区取数据
@@ -49,8 +49,8 @@ void consumer_task() {
 
 int main() {
     ThreadManager manager;
-    manager.add(100, producer_task); // 加入100个生产者
-    manager.add(100, consumer_task); // 加入100个消费者
+    manager.add(100, producer_progress); // 加入100个生产者
+    manager.add(100, consumer_progress); // 加入100个消费者
     manager.start(); // 启动所有线程
     return 0;
 }

@@ -27,7 +27,7 @@ void get_orange() {
 }
 
 // 定义信号量
-Semaphore mutex = 1; // 互斥信号量，确保盘子的互斥使用
+Semaphore mutex = 1; // 互斥信号量，确保盘子的互斥使用 当互斥资源个数为1的时候，某些生产者消费者问题中可以省略这个互斥信号量，比如本题中mutex可以省略
 Semaphore apple_full = 0; // 表示盘子中有苹果的信号量
 Semaphore orange_full = 0; // 表示盘子中有橘子的信号量
 Semaphore plate_empty = 1; // 表示盘子为空的信号量，用来控制放水果的操作

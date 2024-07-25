@@ -9,16 +9,11 @@ void consume_data() {
     std::cout << "Consuming data..." << std::endl;
 }
 
-// 缓冲区总资源数
-#define n 10
-
-// 缓冲区互斥信号量
-Semaphore mutex = 1;
+#define n 10 // 缓冲区总资源数
+Semaphore mutex = 1;// 缓冲区互斥信号量
 // empty + full = n 缓冲区总资源数
-// 当前缓冲区的空位，即生产者可用的资源数量
-Semaphore empty = n;
-// 当前缓冲区中数据的数量，即消费者可用的资源的数量
-Semaphore full = 0;
+Semaphore empty = n;// 当前缓冲区的空位，即生产者可用的资源数量
+Semaphore full = 0;// 当前缓冲区中数据的数量，即消费者可用的资源的数量
 
 void producer_task() {
     wait(empty);  // 缓冲区是否有空位，即生产者是否有可用资源

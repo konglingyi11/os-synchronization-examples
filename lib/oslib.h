@@ -4,8 +4,11 @@
 
 #ifndef OS_OSLIB_H
 #define OS_OSLIB_H
+
 #include <iostream>
 #include "bits/stdc++.h"
 #include "ThreadManager.h"
 #include "Semaphore.h"
+
+#define Data int
 #endif //OS_OSLIB_H

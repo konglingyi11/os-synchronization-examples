@@ -19,11 +19,13 @@ Semaphore full = 0;// 当前缓冲区中数据的数量，即消费者可用的�
 
 void add_data_to_buffer(Data data) {
     std::cout << "data --->>> buffer..." << std::endl;
-};
+}
 
 Data get_data_from_buffer() {
     std::cout << "buffer --->>> data..." << std::endl;
-};
+    Data data = 1;
+    return data;
+}
 
 void producer_task() {
     Data data = produce_data();  // 生产数据

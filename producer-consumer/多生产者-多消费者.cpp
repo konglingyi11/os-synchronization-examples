@@ -1,6 +1,4 @@
-#include "lib/oslib.h"
-#include <iostream>
-
+#include "../lib/oslib.h"
 /*
  * 桌子上有一只盘子，每次只能向其中放入一个水果。
  * 爸爸专向盘子中放苹果(apple)，女儿专等着吃盘子中的苹果。

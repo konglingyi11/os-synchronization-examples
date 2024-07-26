@@ -11,4 +11,5 @@
 #include "Semaphore.h"
 
 #define Data int
+#define do_something(x) std::cout<<(x)<<std::endl
 #endif //OS_OSLIB_H

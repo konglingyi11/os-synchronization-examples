@@ -1,4 +1,4 @@
-#include "lib/oslib.h"
+#include "../lib/oslib.h"
 
 
 Data produce_data() {

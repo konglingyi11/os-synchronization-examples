@@ -13,9 +13,10 @@
 
 class ThreadManager {
 public:
-    void add(int count, void (*task)()) {
+    template<typename Func, typename... Args>
+    void add(int count, Func&& func, Args&&... args) {
         for (int i = 0; i < count; ++i) {
-            tasks.emplace_back(task);
+            tasks.emplace_back([=]() { func(args...); });
         }
     }
 
